@@ -4,10 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,7 +26,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
@@ -35,6 +34,9 @@ import java.util.Map;
 public class CustomerSettingsActivity extends AppCompatActivity {
 
     private EditText mNameField, mPhoneField;
+    private EditText mDestinationField;
+    private EditText mFacebookField;
+    private EditText mBusNoField;
 
     private Button mBack, mConfirm;
 
@@ -47,6 +49,9 @@ public class CustomerSettingsActivity extends AppCompatActivity {
     private String mName;
     private String mPhone;
     private String mProfileImageUrl;
+    private String mbusno;
+    private String mdestination;
+    private String mfacebook;
 
     private Uri resultUri;
 
@@ -58,10 +63,13 @@ public class CustomerSettingsActivity extends AppCompatActivity {
 
         mNameField = (EditText) findViewById(R.id.name);
         mPhoneField = (EditText) findViewById(R.id.phone);
+        mBusNoField = (EditText) findViewById(R.id.busno);
+        mFacebookField=(EditText)findViewById(R.id.facebook);
+        mDestinationField= (EditText)findViewById(R.id.destination);
 
         mProfileImage = (ImageView) findViewById(R.id.profileImage);
 
-        mBack = (Button) findViewById(R.id.back);
+//        mBack = (Button) findViewById(R.id.back);
         mConfirm = (Button) findViewById(R.id.confirm);
 
         mAuth = FirebaseAuth.getInstance();
@@ -126,10 +134,17 @@ public class CustomerSettingsActivity extends AppCompatActivity {
     private void saveUserInformation() {
         mName = mNameField.getText().toString();
         mPhone = mPhoneField.getText().toString();
+        mbusno = mBusNoField.getText().toString();
+        mfacebook = mFacebookField.getText().toString();
+        mdestination = mDestinationField.getText().toString();
+
 
         Map userInfo = new HashMap();
         userInfo.put("name", mName);
         userInfo.put("phone", mPhone);
+        userInfo.put("busno",mbusno);
+        userInfo.put("facebook",mfacebook);
+        userInfo.put("destination",mdestination);
         mCustomerDatabase.updateChildren(userInfo);
 
         if(resultUri != null) {

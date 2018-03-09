@@ -15,7 +15,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.simcoder.uber.historyRecyclerView.HistoryAdapter;
 import com.simcoder.uber.historyRecyclerView.HistoryObject;
 
 import java.util.ArrayList;
@@ -46,7 +45,7 @@ public class HistoryActivity extends AppCompatActivity {
         mHistoryRecyclerView.setHasFixedSize(true);
         mHistoryLayoutManager = new LinearLayoutManager(HistoryActivity.this);
         mHistoryRecyclerView.setLayoutManager(mHistoryLayoutManager);
-        mHistoryAdapter = new HistoryAdapter(getDataSetHistory(), HistoryActivity.this);
+//        mHistoryAdapter = new HistoryAdapter(getDataSetHistory(), HistoryActivity.this);
         mHistoryRecyclerView.setAdapter(mHistoryAdapter);
 
 

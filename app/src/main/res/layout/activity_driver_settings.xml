@@ -28,6 +28,25 @@
         android:hint="Phone"
         android:layout_marginBottom="20sp"
         android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/busno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20sp"
+        android:background="@null"
+        android:hint="Preferred Bus Number"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/destination"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20sp"
+        android:background="@null"
+        android:hint="Destination"
+        android:inputType="text" />
+
     <EditText
         android:id="@+id/car"
         android:layout_width="match_parent"
@@ -35,6 +54,16 @@
         android:background="@null"
         android:hint="Car"
         android:layout_marginBottom="20sp"/>
+
+    <EditText
+        android:id="@+id/facebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20sp"
+        android:background="@null"
+        android:hint="Facebook Profile Link"
+        android:inputType="text" />
+
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,17 +72,17 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="UberX"
+            android:text="1 seat"
             android:id="@+id/UberX"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="UberBlack"
+            android:text="2 seats"
             android:id="@+id/UberBlack"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="UberXl"
+            android:text="3 seats"
             android:id="@+id/UberXl"/>
     </RadioGroup>
 
@@ -62,10 +91,5 @@
         android:layout_height="wrap_content"
         android:id="@+id/confirm"
         android:text="confirm"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/back"
-        android:text="back"/>
 
 </LinearLayout>

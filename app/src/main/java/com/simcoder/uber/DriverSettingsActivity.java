@@ -2,16 +2,12 @@ package com.simcoder.uber;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Build;
+import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,7 +28,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
@@ -40,7 +35,12 @@ import java.util.Map;
 
 public class DriverSettingsActivity extends AppCompatActivity {
 
-    private EditText mNameField, mPhoneField, mCarField;
+    private EditText mNameField;
+    private EditText mPhoneField;
+    private EditText mCarField;
+    private EditText mDestinationField;
+    private EditText mFacebookField;
+    private EditText mBusNoField;
 
     private Button mBack, mConfirm;
 
@@ -55,6 +55,14 @@ public class DriverSettingsActivity extends AppCompatActivity {
     private String mCar;
     private String mService;
     private String mProfileImageUrl;
+    private String mbusno;
+    private String mdestination;
+    private String mfacebook;
+
+
+
+
+
 
     private Uri resultUri;
 
@@ -70,12 +78,17 @@ public class DriverSettingsActivity extends AppCompatActivity {
         mNameField = (EditText) findViewById(R.id.name);
         mPhoneField = (EditText) findViewById(R.id.phone);
         mCarField = (EditText) findViewById(R.id.car);
+        mBusNoField = (EditText) findViewById(R.id.busno);
+        mFacebookField=(EditText)findViewById(R.id.facebook);
+        mDestinationField= (EditText)findViewById(R.id.destination);
+
+
 
         mProfileImage = (ImageView) findViewById(R.id.profileImage);
 
         mRadioGroup = (RadioGroup) findViewById(R.id.radioGroup);
 
-        mBack = (Button) findViewById(R.id.back);
+//        mBack = (Button) findViewById(R.id.back);
         mConfirm = (Button) findViewById(R.id.confirm);
 
         mAuth = FirebaseAuth.getInstance();
@@ -159,7 +172,9 @@ public class DriverSettingsActivity extends AppCompatActivity {
         mName = mNameField.getText().toString();
         mPhone = mPhoneField.getText().toString();
         mCar = mCarField.getText().toString();
-
+        mbusno = mBusNoField.getText().toString();
+        mdestination= mDestinationField.getText().toString();
+        mfacebook=mFacebookField.getText().toString();
         int selectId = mRadioGroup.getCheckedRadioButtonId();
 
         final RadioButton radioButton = (RadioButton) findViewById(selectId);
@@ -175,6 +190,10 @@ public class DriverSettingsActivity extends AppCompatActivity {
         userInfo.put("phone", mPhone);
         userInfo.put("car", mCar);
         userInfo.put("service", mService);
+        userInfo.put("busno",mbusno);
+        userInfo.put("destination",mdestination);
+        userInfo.put("facebook",mfacebook);
+
         mDriverDatabase.updateChildren(userInfo);
 
         if(resultUri != null) {

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "227378697004",
+    "firebase_url": "https://auto-carpooling.firebaseio.com",
+    "project_id": "auto-carpooling",
+    "storage_bucket": "auto-carpooling.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:227378697004:android:2ac8c7eb10297239",
+        "android_client_info": {
+          "package_name": "com.simcoder.uber"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "227378697004-asv4r8d3l2m3ut0rj13abka3vlobkcd1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.simcoder.uber",
+            "certificate_hash": "51284a819eb496d4224a2964bbd13d269a93f0af"
+          }
+        },
+        {
+          "client_id": "227378697004-qb75hgkakhnvovjavrr2k3cc3adjel8h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClbwr7YKkUy5CR9bvAIrb5l69hXs3Yx1U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "227378697004-qb75hgkakhnvovjavrr2k3cc3adjel8h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

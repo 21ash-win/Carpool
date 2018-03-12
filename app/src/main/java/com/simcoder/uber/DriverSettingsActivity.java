@@ -60,10 +60,6 @@ public class DriverSettingsActivity extends AppCompatActivity {
     private String mfacebook;
 
 
-
-
-
-
     private Uri resultUri;
 
     private RadioGroup mRadioGroup;
@@ -113,13 +109,13 @@ public class DriverSettingsActivity extends AppCompatActivity {
             }
         });
 
-        mBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                return;
-            }
-        });
+//        mBack.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                finish();
+//                return;
+//            }
+//        });
     }
     private void getUserInfo(){
         mDriverDatabase.addValueEventListener(new ValueEventListener() {
